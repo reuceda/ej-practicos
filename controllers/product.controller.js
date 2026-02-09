@@ -25,7 +25,7 @@ exports.updateProduct = async (req, res) => {
 };
 
 exports.deleteProduct = async (req, res) => {
-    const deleted = await productService.delete(req.params.id);
+    const deleted = await productService.remove(req.params.id);
     if (!deleted) {
         return res.status(404).json({ message: 'Producto no encontrado' });
     }
